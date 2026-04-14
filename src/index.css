@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-accent: #6366f1;
+}
+
+:root {
+  --background: 0 0 0;
+  --foreground: 255 255 255;
+  --accent: 99 102 241;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  /* Hide default cursor for standard elements to show custom cursor */
+  cursor: none; 
+}
+
+/* Maintain cursor on interactive elements temporarily if the custom cursor misses them */
+a, button, input, textarea, [role="button"] {
+  cursor: none;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Keyframes for Aurora */
+@keyframes aurora-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30%, -20%) scale(1.1); }
+  66% { transform: translate(-20%, 20%) scale(0.9); }
+}
+
+@keyframes aurora-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-30%, 10%) scale(0.8); }
+  66% { transform: translate(20%, -30%) scale(1.2); }
+}
+
+@keyframes aurora-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(10%, 30%) scale(1.2); }
+  66% { transform: translate(-10%, -20%) scale(0.9); }
+}
+
+.animate-aurora-1 { animation: aurora-1 15s ease-in-out infinite; }
+.animate-aurora-2 { animation: aurora-2 20s ease-in-out infinite reverse; }
+.animate-aurora-3 { animation: aurora-3 25s ease-in-out infinite; }
